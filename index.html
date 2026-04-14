@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mohammad Kheir Mirza — DevOps Engineer & Community Builder</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <style>
     /* ─── Reset & Base ─────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:        #08090d;
-      --surface:   #111218;
-      --border:    rgba(255,255,255,0.07);
-      --accent:    #4f8ef7;
-      --accent2:   #8b5cf6;
-      --text:      #e8eaf0;
-      --muted:     #7b7f91;
-      --radius:    14px;
-      --nav-h:     64px;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    :root {
+      --bg: #08090d;
+      --surface: #111218;
+      --border: rgba(255, 255, 255, 0.07);
+      --accent: #4f8ef7;
+      --accent2: #8b5cf6;
+      --text: #e8eaf0;
+      --muted: #7b7f91;
+      --radius: 14px;
+      --nav-h: 64px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
@@ -33,17 +43,31 @@
       overflow-x: hidden;
     }
 
-    ::selection { background: var(--accent); color: #fff; }
+    ::selection {
+      background: var(--accent);
+      color: #fff;
+    }
 
     /* ─── Scrollbar ─────────────────────────────────────────────────── */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 3px;
+    }
 
     /* ─── Nav ───────────────────────────────────────────────────────── */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: var(--nav-h);
       display: flex;
       align-items: center;
@@ -62,7 +86,10 @@
       text-decoration: none;
       letter-spacing: -0.02em;
     }
-    .nav-logo span { color: var(--accent); }
+
+    .nav-logo span {
+      color: var(--accent);
+    }
 
     .nav-links {
       display: flex;
@@ -77,7 +104,10 @@
       font-weight: 500;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--text); }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
 
     .nav-cta {
       background: var(--accent);
@@ -87,7 +117,11 @@
       font-size: 0.85rem !important;
       transition: opacity 0.2s !important;
     }
-    .nav-cta:hover { opacity: 0.85; color: #fff !important; }
+
+    .nav-cta:hover {
+      opacity: 0.85;
+      color: #fff !important;
+    }
 
     /* ─── Hero ──────────────────────────────────────────────────────── */
     .hero {
@@ -104,18 +138,23 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: -200px; left: 50%;
+      top: -200px;
+      left: 50%;
       transform: translateX(-50%);
-      width: 900px; height: 600px;
-      background: radial-gradient(ellipse, rgba(79,142,247,0.12) 0%, transparent 70%);
+      width: 900px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(79, 142, 247, 0.12) 0%, transparent 70%);
       pointer-events: none;
     }
+
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -100px; right: -100px;
-      width: 500px; height: 500px;
-      background: radial-gradient(ellipse, rgba(139,92,246,0.08) 0%, transparent 70%);
+      bottom: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(ellipse, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -130,8 +169,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(79,142,247,0.1);
-      border: 1px solid rgba(79,142,247,0.25);
+      background: rgba(79, 142, 247, 0.1);
+      border: 1px solid rgba(79, 142, 247, 0.25);
       color: var(--accent);
       font-size: 0.8rem;
       font-weight: 600;
@@ -141,17 +180,28 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
+
     .hero-badge::before {
       content: '';
-      width: 7px; height: 7px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: var(--accent);
       animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.5; transform: scale(0.8); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+      }
     }
 
     .hero h1 {
@@ -162,7 +212,10 @@
       margin-bottom: 1.2rem;
     }
 
-    .hero h1 .name { color: var(--text); }
+    .hero h1 .name {
+      color: var(--text);
+    }
+
     .hero h1 .gradient {
       background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
       -webkit-background-clip: text;
@@ -197,11 +250,12 @@
       font-weight: 600;
       font-size: 0.95rem;
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 0 0 rgba(79,142,247,0.4);
+      box-shadow: 0 0 0 0 rgba(79, 142, 247, 0.4);
     }
+
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(79,142,247,0.35);
+      box-shadow: 0 8px 30px rgba(79, 142, 247, 0.35);
     }
 
     .btn-secondary {
@@ -218,9 +272,10 @@
       border: 1px solid var(--border);
       transition: border-color 0.2s, background 0.2s;
     }
+
     .btn-secondary:hover {
-      border-color: rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.04);
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.04);
     }
 
     /* ─── Section Shared ────────────────────────────────────────────── */
@@ -252,10 +307,17 @@
       line-height: 1.75;
     }
 
-    .container { max-width: 1000px; margin: 0 auto; }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
     /* ─── About ─────────────────────────────────────────────────────── */
-    #about { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    #about {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
 
     .about-grid {
       display: grid;
@@ -270,7 +332,10 @@
       margin-bottom: 1rem;
       line-height: 1.8;
     }
-    .about-text p strong { color: var(--text); }
+
+    .about-text p strong {
+      color: var(--text);
+    }
 
     .about-stats {
       display: grid;
@@ -285,7 +350,10 @@
       padding: 1.4rem 1.6rem;
       transition: border-color 0.2s;
     }
-    .stat-card:hover { border-color: rgba(79,142,247,0.3); }
+
+    .stat-card:hover {
+      border-color: rgba(79, 142, 247, 0.3);
+    }
 
     .stat-num {
       font-size: 2rem;
@@ -304,12 +372,12 @@
     }
 
     /* ─── Mission ───────────────────────────────────────────────────── */
-    #mission { }
+    #mission {}
 
     .mission-banner {
       margin-top: 3rem;
-      background: linear-gradient(135deg, rgba(79,142,247,0.08) 0%, rgba(139,92,246,0.08) 100%);
-      border: 1px solid rgba(79,142,247,0.2);
+      background: linear-gradient(135deg, rgba(79, 142, 247, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+      border: 1px solid rgba(79, 142, 247, 0.2);
       border-radius: 20px;
       padding: 2.5rem 3rem;
       display: flex;
@@ -344,8 +412,8 @@
     }
 
     .tag {
-      background: rgba(79,142,247,0.1);
-      border: 1px solid rgba(79,142,247,0.2);
+      background: rgba(79, 142, 247, 0.1);
+      border: 1px solid rgba(79, 142, 247, 0.2);
       color: var(--accent);
       font-size: 0.78rem;
       font-weight: 600;
@@ -354,7 +422,11 @@
     }
 
     /* ─── Projects ──────────────────────────────────────────────────── */
-    #projects { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    #projects {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
 
     .projects-grid {
       display: grid;
@@ -375,8 +447,9 @@
       flex-direction: column;
       gap: 0.8rem;
     }
+
     .project-card:hover {
-      border-color: rgba(79,142,247,0.35);
+      border-color: rgba(79, 142, 247, 0.35);
       transform: translateY(-3px);
     }
 
@@ -386,7 +459,9 @@
       align-items: flex-start;
     }
 
-    .project-emoji { font-size: 1.8rem; }
+    .project-emoji {
+      font-size: 1.8rem;
+    }
 
     .project-status {
       font-size: 0.72rem;
@@ -396,14 +471,16 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
+
     .status-active {
-      background: rgba(34,197,94,0.12);
-      border: 1px solid rgba(34,197,94,0.25);
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.25);
       color: #4ade80;
     }
+
     .status-planning {
-      background: rgba(250,204,21,0.1);
-      border: 1px solid rgba(250,204,21,0.2);
+      background: rgba(250, 204, 21, 0.1);
+      border: 1px solid rgba(250, 204, 21, 0.2);
       color: #facc15;
     }
 
@@ -428,7 +505,7 @@
     }
 
     .tech-tag {
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border);
       color: var(--muted);
       font-size: 0.72rem;
@@ -437,7 +514,7 @@
     }
 
     /* ─── Experience ────────────────────────────────────────────────── */
-    #experience { }
+    #experience {}
 
     .timeline {
       margin-top: 3rem;
@@ -477,11 +554,12 @@
       position: absolute;
       left: 140px;
       top: 6px;
-      width: 10px; height: 10px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background: var(--accent);
       transform: translateX(-50%);
-      box-shadow: 0 0 0 3px rgba(79,142,247,0.2);
+      box-shadow: 0 0 0 3px rgba(79, 142, 247, 0.2);
     }
 
     .timeline-content {
@@ -493,12 +571,14 @@
       font-weight: 700;
       letter-spacing: -0.01em;
     }
+
     .timeline-content .company {
       font-size: 0.85rem;
       color: var(--accent);
       font-weight: 500;
       margin-bottom: 0.5rem;
     }
+
     .timeline-content p {
       font-size: 0.88rem;
       color: var(--muted);
@@ -548,21 +628,23 @@
       align-items: center;
       gap: 0.5rem;
     }
+
     .skill-item::before {
       content: '';
-      width: 5px; height: 5px;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
       background: var(--accent);
       flex-shrink: 0;
     }
 
     /* ─── Contact ───────────────────────────────────────────────────── */
-    #contact { }
+    #contact {}
 
     .contact-card {
       margin-top: 3rem;
-      background: linear-gradient(135deg, rgba(79,142,247,0.07) 0%, rgba(139,92,246,0.07) 100%);
-      border: 1px solid rgba(79,142,247,0.18);
+      background: linear-gradient(135deg, rgba(79, 142, 247, 0.07) 0%, rgba(139, 92, 246, 0.07) 100%);
+      border: 1px solid rgba(79, 142, 247, 0.18);
       border-radius: 20px;
       padding: 3rem;
       display: flex;
@@ -601,7 +683,11 @@
       font-size: 0.9rem;
       transition: transform 0.2s, opacity 0.2s;
     }
-    .contact-link:hover { transform: translateY(-2px); opacity: 0.85; }
+
+    .contact-link:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+    }
 
     .contact-link.linkedin {
       background: #0A66C2;
@@ -609,7 +695,7 @@
     }
 
     .contact-link.email {
-      background: rgba(255,255,255,0.07);
+      background: rgba(255, 255, 255, 0.07);
       border: 1px solid var(--border);
       color: var(--text);
     }
@@ -629,6 +715,7 @@
       transform: translateY(24px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
+
     .fade-up.visible {
       opacity: 1;
       transform: translateY(0);
@@ -636,7 +723,9 @@
 
     /* ─── Mobile ────────────────────────────────────────────────────── */
     @media (max-width: 720px) {
-      .nav-links { display: none; }
+      .nav-links {
+        display: none;
+      }
 
       .about-grid {
         grid-template-columns: 1fr;
@@ -646,10 +735,23 @@
       .timeline-item {
         grid-template-columns: 1fr;
       }
-      .timeline-item::after { display: none; }
-      .timeline-dot { display: none; }
-      .timeline-date { text-align: left; padding-top: 0; }
-      .timeline-content { padding-left: 0; }
+
+      .timeline-item::after {
+        display: none;
+      }
+
+      .timeline-dot {
+        display: none;
+      }
+
+      .timeline-date {
+        text-align: left;
+        padding-top: 0;
+      }
+
+      .timeline-content {
+        padding-left: 0;
+      }
 
       .mission-banner {
         flex-direction: column;
@@ -664,6 +766,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- ─── Nav ─────────────────────────────────────────────────────── -->
@@ -684,18 +787,24 @@
       <div class="hero-badge">Open to collaboration</div>
       <h1>
         <span class="name">Mohammad Kheir Mirza</span><br />
-        <span class="gradient">DevOps Engineer & Civic Builder</span>
+        <span class="gradient">DevOps Engineer</span>
       </h1>
       <p class="hero-sub">
-        Software engineer at Optus building CI/CD infrastructure and platform automation — and volunteering my skills to design technology that serves the most vulnerable in our communities.
+        Software engineer at Optus building CI/CD infrastructure and platform automation — and volunteering my skills to
+        design technology that serves communities.
       </p>
       <div class="hero-actions">
         <a href="#mission" class="btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
           Current Mission
         </a>
         <a href="#contact" class="btn-secondary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
           Contact me
         </a>
       </div>
@@ -710,13 +819,17 @@
       <div class="about-grid">
         <div class="about-text fade-up">
           <p>
-            I'm <strong>Mohammad Kheir Mirza</strong> — a Software Engineer based in <strong>Greater Sydney</strong>. I graduated from UNSW with a degree in Software Engineering (Honours) and currently work at Optus as a Junior DevOps Engineer.
+            I'm <strong>Mohammad Kheir Mirza</strong> — a Software Engineer based in <strong>Greater Sydney</strong>. I
+            graduated from UNSW with a degree in Software Engineering (Honours) and currently work at Optus as a Junior
+            DevOps Engineer.
           </p>
           <p>
-            Day to day I design CI/CD pipelines, build platform automation on OpenShift, and improve developer experience across engineering teams. I'm driven by a belief that well-built systems — whether internal tooling or public infrastructure — genuinely change people's lives.
+            Day to day I design CI/CD pipelines, build platform automation on OpenShift, and improve developer
+            experience across engineering teams. I'm driven by a belief that well-built systems — whether internal
+            tooling or public infrastructure — genuinely change people's lives.
           </p>
           <p>
-            Outside of work I'm channeling the same skills toward civic tech, currently proposing a digital resource platform for people experiencing homelessness in collaboration with local government.
+            Outside of work I'm channeling the same skills to serve the community.
           </p>
         </div>
         <div class="about-stats fade-up">
@@ -747,18 +860,19 @@
       <p class="section-label">Current focus</p>
       <h2 class="section-title">Technology in service of people</h2>
       <p class="section-sub">
-        My current mission is to build digital infrastructure that connects vulnerable people to the resources they need — starting locally.
+        My current mission is to build digital infrastructure that connects vulnerable people to the resources they need
+        — starting locally.
       </p>
 
       <div class="mission-banner">
         <div class="mission-icon">🏠</div>
         <div>
-          <h3>Homeless Services Web Platform — [City Name]</h3>
+          <h3>Homeless Services Web Platform — Cumberland Council</h3>
           <p>
-            I'm working with [Council Member Name] and local social services to design and build a free, accessible website that helps people experiencing homelessness quickly find shelters, food banks, mental health support, and legal aid in their area. No app download, no login — just a fast, simple resource on any device.
+            I'm working with Cumberland Council and local social services to design and build a free, accessible
+            website that helps people experiencing homelessness.
           </p>
           <div class="mission-tags">
-            <span class="tag">Civic Tech</span>
             <span class="tag">Social Impact</span>
             <span class="tag">Accessibility</span>
             <span class="tag">Council Proposal</span>
@@ -782,11 +896,10 @@
             <span class="project-status status-active">Active</span>
           </div>
           <h3>Homeless Services Platform</h3>
-          <p>A free, accessible web resource connecting people experiencing homelessness to local services — shelters, food, healthcare, legal aid.</p>
+          <p>A free, accessible web resource connecting people experiencing homelessness to local services.</p>
           <div class="project-footer">
             <span class="tech-tag">HTML/CSS</span>
             <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">Civic Tech</span>
           </div>
         </div>
 
@@ -796,7 +909,8 @@
             <span class="project-status status-active">Active</span>
           </div>
           <h3>Honours Thesis — Social Conversational AI</h3>
-          <p>Built NLP agents using BERT and ML to improve social conversation in chatbots — reducing user frustration in commerce and bringing humanity to welfare settings like child/elderly care and psychoeducation.</p>
+          <p>Built NLP agents using BERT and ML to improve social conversation in chatbots — reducing user frustration
+            in commerce and bringing humanity to welfare settings like child/elderly care and psychoeducation.</p>
           <div class="project-footer">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">BERT</span>
@@ -811,7 +925,8 @@
             <span class="project-status status-active">Completed</span>
           </div>
           <h3>Data Service Engineering Suite</h3>
-          <p>Three end-to-end data projects: data cleansing with pandas, a documented REST API using Flask & Swagger, and ML classification pipelines in scikit-learn with feature selection and data preparation.</p>
+          <p>Three end-to-end data projects: data cleansing with pandas, a documented REST API using Flask & Swagger,
+            and ML classification pipelines in scikit-learn with feature selection and data preparation.</p>
           <div class="project-footer">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">Flask</span>
@@ -838,7 +953,9 @@
           <div class="timeline-content">
             <h3>Junior DevOps Engineer</h3>
             <div class="company">Optus · Macquarie Park, Sydney</div>
-            <p>Designing CI/CD pipelines and building internal tooling to support scalable, reliable systems on OpenShift. Contributing to production support and driving adoption of DevOps practices across cross-functional teams.</p>
+            <p>Designing CI/CD pipelines and building internal tooling to support scalable, reliable systems on
+              OpenShift. Contributing to production support and driving adoption of DevOps practices across
+              cross-functional teams.</p>
           </div>
         </div>
 
@@ -848,7 +965,9 @@
           <div class="timeline-content">
             <h3>Network Automation Tech Graduate</h3>
             <div class="company">Optus · Macquarie Park, Sydney</div>
-            <p>Led GitLab migrations, built CI/CD pipelines, and developed automation scripts for systems including Harbor. Improved internal tooling reliability and deployment processes; supported and mentored interns.</p>
+            <p>Led GitLab migrations, built CI/CD pipelines, and developed automation scripts for systems including
+              Harbor. Improved internal tooling reliability and deployment processes; supported and mentored interns.
+            </p>
           </div>
         </div>
 
@@ -858,7 +977,9 @@
           <div class="timeline-content">
             <h3>NaaS Graduate Engineer</h3>
             <div class="company">Optus · Macquarie Park, Sydney</div>
-            <p>Led feature deliveries on API gateway development using Apigee and Rancher. Designed scalable solutions, integrated cross-team services in Python, mentored interns, and contributed to system design and operational reliability.</p>
+            <p>Led feature deliveries on API gateway development using Apigee and Rancher. Designed scalable solutions,
+              integrated cross-team services in Python, mentored interns, and contributed to system design and
+              operational reliability.</p>
           </div>
         </div>
 
@@ -868,7 +989,8 @@
           <div class="timeline-content">
             <h3>NaaS Intern</h3>
             <div class="company">Optus · Macquarie Park, Sydney</div>
-            <p>Supported API gateway development with hands-on experience in Apigee, Rancher, and Python. Contributed to building and maintaining scalable network services and improving system reliability.</p>
+            <p>Supported API gateway development with hands-on experience in Apigee, Rancher, and Python. Contributed to
+              building and maintaining scalable network services and improving system reliability.</p>
           </div>
         </div>
 
@@ -937,11 +1059,18 @@
         </div>
         <div class="contact-links">
           <a href="https://www.linkedin.com/in/mohammad-k-mirza/" target="_blank" class="contact-link linkedin">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
             LinkedIn
           </a>
           <a href="mailto:mohammadkheirmirza@gmail.com" class="contact-link email">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
             Email me
           </a>
         </div>
@@ -964,4 +1093,5 @@
   </script>
 
 </body>
+
 </html>
